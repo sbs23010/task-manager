@@ -13,9 +13,8 @@ function build() {
     })
 
     fastify.post('/task', async (req, response) => {
-        console.log(req.body);
         if("title" in req.body && "description" in req.body) {
-            tasks.push(req.body);
+            // tasks.push(req.body);
             return;
         }
 
