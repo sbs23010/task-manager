@@ -41,4 +41,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: dgonzalezcct/task-manager:2.0
+          tags: dgonzalezcct/task-manager:${{ github.sha }}
