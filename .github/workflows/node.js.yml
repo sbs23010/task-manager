@@ -39,6 +39,5 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v4
-      - with:
         push: true
         tags: dgonzalezcct/task-manager:${{ steps.commit.outputs.short }}
