@@ -9,6 +9,7 @@ test('test that get without post returns an empty array', async t => {
       method: 'GET',
       url: '/task'
     });
+    t.plan(3)
     t.equal(response.statusCode, 200, 'returns a status code of 200');
     t.not(response.body, null, 'the body of the response is not null');
     t.equal(JSON.parse(response.body).length, 0, 'returns an empty array');
@@ -28,6 +29,7 @@ test('test that post saves 1 task', async t => {
     method: 'GET',
     url: '/task'
   })
+  t.plan(3)
   t.equal(response.statusCode, 200, 'returns a status code of 200')
   t.not(response.body, null, 'the body of the response is not null');
   t.equal(JSON.parse(response.body).length, 1, 'returns an empty array');

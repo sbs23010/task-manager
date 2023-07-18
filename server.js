@@ -5,7 +5,7 @@ function build() {
     const tasks = []; // TODO Save this in a database
 
     const fastify = require('fastify')({
-        logger: false
+        logger: true
     });
 
     fastify.get('/task', async () => {
