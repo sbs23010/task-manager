@@ -22,10 +22,6 @@ function build() {
         response.status(400);
         return {message: "Invalid request"};
     });
-
-    fastify.get('/', async (request, reply) => {
-    return { hello: 'cct' };
-    });
     return fastify;
 }
 
