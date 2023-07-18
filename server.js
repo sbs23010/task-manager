@@ -5,7 +5,7 @@ function build() {
     const tasks = []; // TODO Save this in a database
 
     const fastify = require('fastify')({
-        logger: false
+        logger: true
     });
 
     fastify.get('/task', async () => {
@@ -13,7 +13,6 @@ function build() {
     })
 
     fastify.post('/task', async (req, response) => {
-        console.log(req.body);
         if("title" in req.body && "description" in req.body) {
             tasks.push(req.body);
             return;
