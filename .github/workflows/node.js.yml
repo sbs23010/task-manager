@@ -39,6 +39,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v4
-        with:
-          push: true
-          tags: dgonzalezcct/task-manager:${{ github.sha }}
+      - name: Set outputs
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      - with:
+        push: true
+        tags: dgonzalezcct/task-manager:${{ steps.vars.outputs.sha_short }}
