@@ -2,8 +2,9 @@ const { createClient } = require('redis');
 
 
 async function saveToRedis(task) {
+    const { REDIS_SERVER, REDIS_PORT } = process.env;
     const client = createClient({
-        url: 'redis://localhost:6379'
+        url: `redis://${REDIS_SERVER}:${REDIS_PORT}`
     });
     client.connect();
     const tasksFromRedis = await client.get('tasks') ?? '[]';
@@ -18,7 +19,7 @@ async function getTasksFromRedis() {
         url: `redis://${REDIS_SERVER}:${REDIS_PORT}`
     });
     client.connect();
-    const tasksFromRedis = await client.get('tasks')
+    const tasksFromRedis = await client.get('tasks') ?? '[]';
     return JSON.parse(tasksFromRedis);
 
 }
