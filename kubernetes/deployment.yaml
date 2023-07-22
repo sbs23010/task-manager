@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
       - name: task-manager
-        image: dgonzalezcct/task-manager:095430624bd262447055f3f07f16b2e1e17b248c
+        image: dgonzalezcct/task-manager:7cf39ea616cde8659e998593bb9468c98e4798d0
         env:
            - name: REDIS_SERVER
-             value: "redis-server"
+             value: "redis-service"
            - name: REDIS_PORT
              value: "6379"
         ports:
