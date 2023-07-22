@@ -1,0 +1,5 @@
+taskManager:
+  image: dgonzalezcct/task-manager:6cf3157ae89c50067e3aac9aae6362d20db40e62
+
+redis:
+  architecture: standalone
