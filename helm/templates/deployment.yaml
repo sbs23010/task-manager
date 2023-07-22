@@ -17,7 +17,7 @@ spec:
 
       containers:
       - name: task-manager
-        image: dgonzalezcct/task-manager:6cf3157ae89c50067e3aac9aae6362d20db40e62
+        image: {{ .Values.taskManager.image }}
         resources:
           requests:
             memory: "64Mi"
