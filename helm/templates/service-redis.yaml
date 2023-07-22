@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: task-manager-service
+  name: redis-service
 spec:
   selector:
-    app: task-manager
+    app: redis
   type: ClusterIP
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 3000
+      port: 6379
+      targetPort: 6379
